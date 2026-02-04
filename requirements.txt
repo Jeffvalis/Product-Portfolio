@@ -1,0 +1,4 @@
+# No third-party dependencies yet.
+# This service will initially rely on Python's standard library and the decimal module
+# for all currency-related calculations.
+
