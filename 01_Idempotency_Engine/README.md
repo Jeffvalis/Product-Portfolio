@@ -9,7 +9,7 @@
 **Context**
 
 - **Nigerian banking rails are prone to intermittent failures**, especially:
-  - Network timeouts between Cowrywise and partner banks/switches
+  - Network timeouts between businesses/fintechs and partner banks/switches
   - Slow or dropped responses from NIP/transfer APIs
   - Occasional partner-side retries without clear traceability
 
@@ -23,7 +23,7 @@
 
 **Core Problem**
 
-Cowrywise needs a **robust, idempotent disbursement engine** that guarantees:
+An **idempotent disbursement engine** is needed that guarantees:
 
 - A **single logical disbursement request** is **processed at most once**, regardless of:
   - Network timeouts
@@ -35,7 +35,7 @@ Without this:
 
 - Users can receive **duplicate payouts** or experience **stuck/unknown status** withdrawals.
 - Finance and Operations spend time doing **manual reconciliations**.
-- Trust in Cowrywise’s withdrawals and reliability is eroded.
+- Trust in the Company’s withdrawals and reliability is eroded.
 
 ---
 
@@ -43,7 +43,7 @@ Without this:
 
 **Primary User Story**
 
-- **As a Cowrywise user,**  
+- **As a customer,**  
   **I want** my withdrawal to my Nigerian bank account to either go through once or not at all,  
   **so that** I’m never overpaid due to system errors and I can trust that my transaction history and wallet balance are always correct, even when “the network is bad”.
 
@@ -68,7 +68,7 @@ Without this:
 - **Key Generation**
   - Keys are generated **by the initiating client/service** (e.g., Withdrawal Service) at the point the user confirms the withdrawal.
   - The same key must be passed through:
-    - Cowrywise’s internal services
+    - Internal services
     - Any queue/message broker
     - The final call to the disbursement engine.
 
