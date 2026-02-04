@@ -10,11 +10,11 @@
 
 - **Nigerian banking rails are prone to intermittent failures**, especially:
   - Network timeouts between businesses/fintechs and partner banks/switches
-  - Slow or dropped responses from NIP/transfer APIs
+  - Slow or dropped responses from  NIBSS Instant Payments/transfer APIs
   - Occasional partner-side retries without clear traceability
 
 - In this environment, **payment/disbursement requests can be left in an unknown state**:
-  - Cowrywise sends a disbursement (e.g., withdrawal to bank account).
+  - We send a disbursement (e.g., withdrawal to bank account).
   - The network times out before we receive a definitive success/failure response.
   - Frontend or backend retries the same transaction.
   - The partner may:
@@ -44,7 +44,7 @@ Without this:
 **Primary User Story**
 
 - **As a customer,**  
-  **I want** my withdrawal to my Nigerian bank account to either go through once or not at all,  
+  **I want** my withdrawal to my bank account to either go through once or not at all,  
   **so that** I’m never overpaid due to system errors and I can trust that my transaction history and wallet balance are always correct, even when “the network is bad”.
 
 **Supporting Stories**
@@ -174,5 +174,6 @@ Without this:
     - 100% of disbursement requests associated with a **traceable idempotency key** in logs and dashboards.
 
 ---
+
 
 
